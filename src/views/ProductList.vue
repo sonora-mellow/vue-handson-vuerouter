@@ -1,13 +1,12 @@
 <template>
-  <div class="product">
-  	<h1>商品情報</h1>
-    <p>このページは ID. {{ $route.params.id }} の詳細を表示する</p>
+  <div class="product-list">
+  	<h1>商品一覧</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Product",
+  name: "ProductList",
   data() {
     return {
 

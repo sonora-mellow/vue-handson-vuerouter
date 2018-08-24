@@ -18,7 +18,7 @@ export default {
       item: null
     };
   },
-  watch {
+  watch: {
     id: {
       handler() {
         products.asyncFind(this.id, item => {

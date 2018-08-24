@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/product">商品情報</router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
 import Home from "./views/Home";
+import Product from "./views/Product";
 
 export default {
   name: "App",
   components: {
-    Home
+    Home,Product
   }
 };
 </script>

@@ -1,26 +1,22 @@
 <template>
   <div class="product" v-if="item" key="product">
-  	<h1>商品情報</h1>
-    <dl class="product-table">
-      <dt>商品名</dt><dd>{{ item.name }}</dd>
-      <dt>価格</dt><dd>{{ item.price }}円</dd>
-      <dt>商品説明</dt><dd>{{ item.content }}</dd>      
-    </dl>
-  </div>
-  <div v-else key="loading">商品情報を読み込んでいます...</div>
+  	<h1>{{ detail.name }}</h1>
+      <nav class="nav">
+        <router-link :to="{ name: 'product-name' }">商品詳細</router-link>
+        <router-link :to="{ name: 'product-review' }">レビュー</router-link>
+      </nav>
+    </div>
+    <div v-else key="loading">商品情報を読み込んでいます...</div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import products from "@/api/products.js";
 
 export default {
   name: "Product",
   props: { id: Number },
-  data() {
-    return {
-      item: null
-    };
-  },
+  computed: mapGetters("product", ["detail"]),
   watch: {
     id: {
       handler() {
@@ -29,6 +25,9 @@ export default {
         })
       }, immediate: true
     }
+  },
+  beforedestroy() {
+    this.$store.dispath("product/destroy")
   }
 };
 </script>

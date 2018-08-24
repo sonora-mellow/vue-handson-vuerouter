@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import products from "@/api/products.js";
+
 export default {
   name: "Product",
   props: { id: Number },

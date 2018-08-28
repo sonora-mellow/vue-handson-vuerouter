@@ -5,9 +5,9 @@ import Home from "@/views/Home.vue";
 import ProductList from "@/views/ProductList.vue";
 import Product from "@/views/Product.vue";
 
-import ProductHome from "@/views/Product/Home.vue";
-import ProductReview from "@/views/Product/Review.vue";
-import ProductReviewDetail from "@/views/Product/ReviewDetail.vue";
+import ProductHome from "@/views/Home.vue";
+import ProductReview from "@/views/Review.vue";
+import ProductReviewDetail from "@/views/ReviewDetail.vue";
 
 Vue.use(VueRouter)
 
